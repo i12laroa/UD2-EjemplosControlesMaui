@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UD2_EjemplosControlesMaui.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            
+            <!-- Control Borde -->
+
+            <Border Stroke="#C49B33"
+                StrokeThickness="4"
+                StrokeShape="RoundRectangle 40,0,0,40"
+                Background="#2B0B98"
+                Padding="16,8"
+                HorizontalOptions="Center">
+
+                <Label Text=".NET MAUI"
+               TextColor="White"
+               FontSize="18"
+               FontAttributes="Bold" />
+            </Border>
+            
+            <!-- Control BoxView -->
+            <BoxView Color="CornflowerBlue"
+             CornerRadius="10"
+             WidthRequest="60"
+             HeightRequest="60"
+             VerticalOptions="Center"
+             HorizontalOptions="Center" />
+
+            <!-- Control Fecha -->
+
+            <DatePicker MinimumDate="01/01/2022"
+            MaximumDate="12/31/2022"
+            Date="06/21/2022" />
+
+            <!-- Control Editor -->
+
+            <Editor x:Name="editor"
+            BackgroundColor="Aqua"
+            Placeholder="Escribe tu respuesta aquí"
+            HeightRequest="250" />
+
+            <!-- Control Indicador de actividad -->
+
+            <ActivityIndicator IsRunning="true"
+                             Color="Orange" />
+
+            <!-- Control Indicador de actividad -->
+            <ImageButton Source="dotnet_bot.png"
+                    Clicked="ImageButton_Clicked"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center" />
+
+            <!-- Control Switch y otros controles -->
+
+            <Switch IsToggled="true"/>
+
+            <Slider Maximum="360" Minimum="0" />
+
+            <CheckBox IsChecked="True" />
+
+           
+            <RadioButton GroupName="Radio1" Content="Diésel" IsChecked="True" />
+            <RadioButton GroupName="Radio1" Content="Gasolina" />
+            <RadioButton GroupName="Radio1" Content="Eléctrico" />
+            
+
+            <TimePicker Time="4:15:26" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
