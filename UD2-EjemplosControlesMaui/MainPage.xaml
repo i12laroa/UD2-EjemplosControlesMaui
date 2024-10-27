@@ -37,6 +37,11 @@
             MaximumDate="12/31/2022"
             Date="06/21/2022" />
 
+            <!-- Control Frame: solo puede contener un elemento -->
+            <Frame CornerRadius="10" BorderColor="Chocolate">
+                <Label Text="Frame alrededor de una etiqueta" />
+            </Frame>
+
             <!-- Control Editor -->
 
             <Editor x:Name="editor"
