@@ -8,9 +8,9 @@
             InitializeComponent();
         }
 
-        private void ImageButton_Clicked(object sender, EventArgs e)
+        private async void ImageButton_Clicked(object sender, EventArgs e)
         {
-            DisplayAlert("Prueba", "prueba", "ok");
+             await DisplayAlert("Prueba", "prueba", "ok");
         }
     }
 

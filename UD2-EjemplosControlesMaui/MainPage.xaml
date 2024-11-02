@@ -7,8 +7,12 @@
         <VerticalStackLayout
             Padding="30,0"
             Spacing="25">
-            
+
             <!-- Control Borde -->
+
+            <Label Text="Control Borde"
+            FontSize="12"
+            FontAttributes="Bold" />
 
             <Border Stroke="#C49B33"
                 StrokeThickness="4"
@@ -22,8 +26,13 @@
                FontSize="18"
                FontAttributes="Bold" />
             </Border>
-            
+
             <!-- Control BoxView -->
+
+            <Label Text="Control BoxView"
+             FontSize="12"
+            FontAttributes="Bold" />
+
             <BoxView Color="CornflowerBlue"
              CornerRadius="10"
              WidthRequest="60"
@@ -33,16 +42,29 @@
 
             <!-- Control Fecha -->
 
+            <Label Text="Control Fecha"
+            FontSize="12"
+            FontAttributes="Bold" />
+
             <DatePicker MinimumDate="01/01/2022"
             MaximumDate="12/31/2022"
             Date="06/21/2022" />
 
             <!-- Control Frame: solo puede contener un elemento -->
+
+            <Label Text="Control Frame"
+             FontSize="12"
+            FontAttributes="Bold" />
+
             <Frame CornerRadius="10" BorderColor="Chocolate">
                 <Label Text="Frame alrededor de una etiqueta" />
             </Frame>
 
             <!-- Control Editor -->
+
+            <Label Text="Control Editor: Múltiples líneas"
+            FontSize="12"
+            FontAttributes="Bold" />
 
             <Editor x:Name="editor"
             BackgroundColor="Aqua"
@@ -51,10 +73,19 @@
 
             <!-- Control Indicador de actividad -->
 
+            <Label Text="Indicador de actividad"
+            FontSize="12"
+            FontAttributes="Bold" />
+
             <ActivityIndicator IsRunning="true"
                              Color="Orange" />
 
-            <!-- Control Indicador de actividad -->
+            <!-- Control Botón imagen -->
+
+            <Label Text="Control Botón imagen"
+            FontSize="12"
+            FontAttributes="Bold" />
+
             <ImageButton Source="dotnet_bot.png"
                     Clicked="ImageButton_Clicked"
                     HorizontalOptions="Center"
@@ -62,19 +93,87 @@
 
             <!-- Control Switch y otros controles -->
 
+            <Label Text="Control Switch , Slider y Checkbox"
+            FontSize="12"
+            FontAttributes="Bold" />
+            
             <Switch IsToggled="true"/>
-
+            
             <Slider Maximum="360" Minimum="0" />
 
             <CheckBox IsChecked="True" />
 
-           
+
+            <Label Text="Control Barra de progreso, Textbox de búsqueda, Stepper y ComboBox"
+            FontSize="12"
+            FontAttributes="Bold" />
+            
+            <ProgressBar />
+
+            <SearchBar Placeholder="Escribe el fichero a buscar" />
+
+            <Stepper Minimum="0" Maximum="10" Increment="2" />
+
+            <Picker Title="Selecciona un color: " >
+                <Picker.Items>
+                    <x:String>Rojo</x:String>
+                    <x:String>Verde</x:String>
+                    <x:String>Azul</x:String>
+                    <x:String>Amarillo</x:String>
+                    <x:String>Naranja</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Label Text="Control RadioButton, Hora"
+                FontSize="12"
+                FontAttributes="Bold" />
+
             <RadioButton GroupName="Radio1" Content="Diésel" IsChecked="True" />
             <RadioButton GroupName="Radio1" Content="Gasolina" />
             <RadioButton GroupName="Radio1" Content="Eléctrico" />
-            
+
 
             <TimePicker Time="4:15:26" />
+            
+
+            <Label Text="Control Listado de datos"
+                FontSize="12"
+                FontAttributes="Bold" />
+
+            <!-- Control para el listado de datos-->
+            <CollectionView>
+                <!-- Configuración de la cuadrícula con dos columnas -->
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Span="2" Orientation="Vertical" />
+                </CollectionView.ItemsLayout>
+
+                <!-- Fuente de datos de ejemplo -->
+                <CollectionView.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Apple</x:String>
+                        <x:String>Banana</x:String>
+                        <x:String>Cherry</x:String>
+                        <x:String>Dragonfruit</x:String>
+                        <x:String>Elderberry</x:String>
+                        <x:String>Fig</x:String>
+                    </x:Array>
+                </CollectionView.ItemsSource>
+
+                <!-- Plantilla de cada elemento -->
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Padding="10" Margin="5" 
+                             BackgroundColor="LightBlue"
+                             CornerRadius="10">
+                            <Label Text="{Binding .}" 
+                                    FontSize="18" 
+                                  FontAttributes="Bold"
+                                  HorizontalOptions="Center"
+                                 VerticalOptions="Center" />
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
 
         </VerticalStackLayout>
     </ScrollView>
