@@ -96,9 +96,9 @@
             <Label Text="Control Switch , Slider y Checkbox"
             FontSize="12"
             FontAttributes="Bold" />
-            
+
             <Switch IsToggled="true"/>
-            
+
             <Slider Maximum="360" Minimum="0" />
 
             <CheckBox IsChecked="True" />
@@ -107,12 +107,16 @@
             <Label Text="Control Barra de progreso, Textbox de búsqueda, Stepper y ComboBox"
             FontSize="12"
             FontAttributes="Bold" />
-            
-            <ProgressBar />
+
+            <ProgressBar Progress="0.7" ProgressColor="Aqua"/>
 
             <SearchBar Placeholder="Escribe el fichero a buscar" />
 
-            <Stepper Minimum="0" Maximum="10" Increment="2" />
+            <Stepper x:Name="StepNumero" Minimum="0" Maximum="10" Increment="2" HorizontalOptions="Center" />
+
+            <Label Text="{Binding Source={x:Reference StepNumero}, Path=Value, Mode=OneWay}" 
+                   HorizontalOptions="Center"
+                   FontAttributes="Bold"/>
 
             <Picker Title="Selecciona un color: " >
                 <Picker.Items>
@@ -134,28 +138,57 @@
 
 
             <TimePicker Time="4:15:26" />
-            
 
-            <Label Text="Control Listado de datos"
+
+
+            <Label Text="Control Listado de datos ListView"
+            FontSize="12"
+             FontAttributes="Bold" />
+
+            <!-- Control para el listado de datos ListView-->
+            <ListView SeparatorColor="Gray">
+
+                <!-- Fuente de datos de ejemplo -->
+                <ListView.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Memoria RAM</x:String>
+                        <x:String>Disco Duro</x:String>
+                        <x:String>CPU</x:String>
+                        <x:String>Placa Base</x:String>
+                        <x:String>Disipadores</x:String>
+                        <x:String>Tarjeta Gráfica</x:String>
+                    </x:Array>
+                </ListView.ItemsSource>
+
+                <!-- Plantilla de cada elemento -->
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Label Text="{Binding .}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+            <Label Text="Control Listado de datos CollectionView"
                 FontSize="12"
                 FontAttributes="Bold" />
 
-            <!-- Control para el listado de datos-->
+            <!-- Control para el listado de datos CollectionView-->
             <CollectionView>
                 <!-- Configuración de la cuadrícula con dos columnas -->
                 <CollectionView.ItemsLayout>
-                    <GridItemsLayout Span="2" Orientation="Vertical" />
+                    <GridItemsLayout Span="2" Orientation="Horizontal" />
                 </CollectionView.ItemsLayout>
 
                 <!-- Fuente de datos de ejemplo -->
                 <CollectionView.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
-                        <x:String>Apple</x:String>
-                        <x:String>Banana</x:String>
-                        <x:String>Cherry</x:String>
-                        <x:String>Dragonfruit</x:String>
-                        <x:String>Elderberry</x:String>
-                        <x:String>Fig</x:String>
+                        <x:String>Memoria RAM</x:String>
+                        <x:String>Disco Duro</x:String>
+                        <x:String>CPU</x:String>
+                        <x:String>Placa Base</x:String>
+                        <x:String>Disipadores</x:String>
+                        <x:String>Tarjeta Gráfica</x:String>
                     </x:Array>
                 </CollectionView.ItemsSource>
 
