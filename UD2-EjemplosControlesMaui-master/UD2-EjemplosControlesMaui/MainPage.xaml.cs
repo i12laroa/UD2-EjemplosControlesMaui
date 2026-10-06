@@ -10,7 +10,7 @@
 
         private async void ImageButton_Clicked(object sender, EventArgs e)
         {
-             await DisplayAlertAsync("Prueba", "prueba", "ok");
+             await DisplayAlert("Prueba", "prueba", "ok");
         }
 
        

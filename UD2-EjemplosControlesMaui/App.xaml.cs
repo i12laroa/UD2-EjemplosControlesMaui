@@ -5,8 +5,12 @@
         public App()
         {
             InitializeComponent();
+            // No asignar MainPage aquí (evita la API obsoleta)
+        }
 
-            MainPage = new AppShell();
+        protected override Window CreateWindow(IActivationState? activationState)
+        {
+            return new Window(new AppShell());
         }
     }
 }
